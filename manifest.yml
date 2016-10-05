@@ -1,0 +1,15 @@
+applications:
+- path: .
+  memory: 384M
+  instances: 1
+  domain: mybluemix.net
+  name: nr0925
+  host: nr0925
+  disk_quota: 1024M
+  services:
+  - iot4e0926-iotf-service
+  - nr0925-cloudantNoSQLDB
+  env:
+    NODE_RED_USERNAME: peteryxu
+    NODE_RED_PASSWORD: XY1lhylh
+  command: node --max-old-space-size=384 node_modules/node-red/red.js --settings ./bluemix-settings.js -v
